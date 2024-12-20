@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            color:crimson;
+        }
+        body {
+            line-height: 1.6;
+            background-color:#333;
+        }
+        #contenitore {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        #intestazione {
+            background-color:maroon;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .int_menu {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .int_menu:hover {
+            color: #333;
+        }
+        #immagini_int {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .imgOr1{
+            height: 150px;
+            width: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            float:left;
+            position:relative;
+            left:150px;
+            
+        }
+        .imgOr2{
+            height: 150px;
+            width: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            float:left;
+            position:relative;
+            top:170px;
+            left:-450px;
+        }
+        #imgFiv {
+            height: 300px;
+            width: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            position:relative;
+            top:-165px;
+            left:250px;
+            
+        }
+        .titoli {
+            text-align: center;
+            margin: 30px 0 10px;
+        }
+        .buttom {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: maroon;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            color:tomato;
+        }
+        .buttom:hover {
+            opacity: 0.5;
+        }
+        #def {
+            margin: 30px auto;
+            max-width: 800px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        .titoli2 {
+            margin: 20px auto;
+            text-align: center;
+            border-bottom: 1px solid black;
+            padding-bottom: 10px;
+            width: fit-content;
+        }
+        .Stitoli {
+            margin: 20px auto;
+            text-align: center;
+            padding-bottom: 10px;
+            width: fit-content;
+        }
+        #servizi {
+            background-color:firebrick;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .bloccoServizio {
+            flex: 1 1 calc(25% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color:lightcoral;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .bloccoServizio img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .bloccoServizio h5 {
+            margin: 10px 0;
+        }
+        .bloccoServizio button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: maroon;
+            border: none;
+            color: tomato;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .bloccoServizio button:hover {
+            opacity: 0.75;
+        }
+        .bloccoServizio img:hover {
+            opacity: 0.5;
+        }
+        .bloccoVANTS{
+            flex: 1 1 calc(25% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color:lightcoral;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #VANTS{
+            background-color: firebrick;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        #focus1{
+            background-color: firebrick;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .fc1{
+            flex: 1 1 calc(25% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: lightcoral;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #form{
+            background-color: lightcoral;           
+            display:flex;
+            flex-direction: column;
+            width:400px;
+            align-items: center;
+            position: relative;
+            top:50px;
+            left:400px;
+        }
+        .Stitoli2{
+            background-color: lightcoral;
+            margin: 20px auto;
+            text-align: center;
+            padding-bottom: 10px;
+            width: 100%;
+        }
+        #form1{
+            background-color: firebrick;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            gap: 20px;
+            height:700px;
+        }
+        #footer{
+            border-radius:8px;
+            width:100%;
+            height:100px;
+            background-color: firebrick;
+            text-align: center;
+            position: relative;
+            top:50px;
+            color:lightcoral;
+        }
+        .linkT{
+            text-decoration: none;  
+        }
+        @media screen and (max-width:600px){
+            .imgOr1{
+            height: 100px;
+            width: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            float:left;
+            position:relative;
+            top:0px;
+            left:50px;
+        }
+        #img3{
+            height: 100px;
+            width: 150px;
+            object-fit: cover;
+            float:left;
+            border-radius: 8px;
+            position:relative;
+            top:100px;
+            left:-250px;
+        }
+        #img4{
+            height: 100px;
+            width: 150px;
+            object-fit: cover;
+            float:left;
+            border-radius: 8px;
+            position:relative;
+            top:0px;
+            left:200px;
+        }
+        #imgFiv {
+            height: 150px;
+            width: 100px;
+            float:right;
+            border-radius: 8px;
+            position:relative;
+            top:-200px;
+            left:150px;
+        }
+        .bloccoServizio{
+            display: flex;
+            flex-direction: row;
+            background-color: lightcoral;
+            border-radius: 8px;
+        }
+        .bloccoVANTS{
+            display: flex;
+            flex-direction: row;
+            background-color: lightcoral;
+            border-radius: 8px;
+            
+        }
+        .focus1{
+           
+            display: flex;
+            flex-direction: row;           
+            background-color: lightcoral;           
+            border-radius: 8px; 
+            
+        }
+        #form{
+            background-color: firebrick;
+            display:flex;
+            flex-direction: column;
+            width:400px;
+            align-items: center;
+            position: relative;
+            top:50px;
+            left:35px;
+        }
+        #footer{
+            height: 150px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="contenitore">
+
+        <div id="intestazione">
+            
+
+            <div class="int_menu"><a href="#Home" name="Home" class="linkT">Home</a></div>
+            <div class="int_menu"><a href="#Servizi" class="linkT">Servizi</a></div>
+            <div class="int_menu"><a href="#Vantaggi" class="linkT">Vantaggi</a></div>
+            <div class="int_menu"><a href="#Novita" class="linkT">Novità</a></div>
+            <div class="int_menu"><a href="#Contatti" class="linkT">Contatti</a></div>
+        </div>
+
+        <div id="immagini_int">
+            <div>
+                <img class="imgOr1" src="img1.jpg" alt="Macchinario 1">
+                <img class="imgOr1" src="img2.jpg" alt="Macchinario 2">
+                <img class="imgOr2" id="img3" src="img3.jpg" alt="Piscina">
+                <img class="imgOr2" id="img4" src="img4.jpg" alt="Area ristoro">
+            </div>
+            <img id="imgFiv" src="img5.jpg" alt="Personal trainer">
+        </div>
+
+        <h1 class="titoli">Palestra</h1>
+        <button class="buttom">Contattaci</button>
+
+        <h3 class="titoli">Chi siamo, cosa facciamo</h3>
+        <article id="def">
+            Siamo una palestra in provincia di Varese. Ci puoi trovare facilmente grazie alla nostra <a href="#">posizione su Maps</a>. Offriamo una vasta gamma di macchinari all'avanguardia, e l'iscrizione include il supporto di un personal trainer per i primi mesi. Disponiamo anche di un'area ristoro, piscine e una zona dedicata allo stretching.
+        </article>
+
+        <a name="Servizi"><h3 class="titoli2">Servizi Offerti</h3></a>
+        <h5 class="Stitoli">forniti all'interno della palestra</h5>
+
+        <div id="servizi">
+
+            
+            <div class="bloccoServizio">
+                <img src="pesi.jpg" alt="Pesi">
+                <h5>Pesi</h5>
+                <p>Una gamma completa di attrezzature per il sollevamento pesi.</p>
+                <button>Scopri di più</button>
+            </div>
+            <div class="bloccoServizio">
+                <img src="borracia.jpg" alt="Borracce">
+                <h5>Borracce</h5>
+                <p>Servizio di acqua fresca e borracce per tutti i soci.</p>
+                <button>Scopri di più</button>
+            </div>
+            <div class="bloccoServizio">
+                <img src="snack.jpg" alt="Snack">
+                <h5>Snack</h5>
+                <p>Zona ristoro con snack energetici e salutari.</p>
+                <button>Scopri di più</button>
+            </div>
+            <div class="bloccoServizio">
+                <img src="tappeti.jpg" alt="Tappeti">
+                <h5>Tappeti</h5>
+                <p>Zona dedicata allo stretching e allenamento a corpo libero.</p>
+                <button>Scopri di più</button>
+            </div>
+        </div>
+
+        <a name="Vantaggi"><h3 class="titoli2">Vantaggi e Servizi</h3></a>
+        <h5 class="Stitoli">per iscritti</h5>
+
+        <div id="VANTS">
+            <div class="bloccoVANTS">
+                <h5 class="Stitoli">Vantaggio 1:</h5>
+                <p>L'uso dei pesi offerti in palestra se usati nel modo corretto potranno permettere col tempo un'aumento della forza muscolare e della tonicita.</p>
+                <h5 class="Stitoli">Vantaggio 2:</h5>
+                <p>Le borrace acquistabili in palestra hanno un'ottima capienza.</p>
+            </div>
+            <div class="bloccoVANTS">
+                <img src="pal.jpg"></img>
+            </div>
+            <div class="bloccoVANTS">
+                <h5 class="Stitoli">Vantaggio 3:</h5>
+                <p>Gli snack che possono essere comprati nell'area ristoro possono essere ottimi per chi vuole fare una colazione proteica e veloce.</p>
+                <h5 class="Stitoli">Vantaggio 4:</h5>
+                <p>I tappeti che si possono trovare in palestra si possono usare nell'area di stretching senza bisogno di dover acquistare un tappeto personale.</p>
+            </div>
+        </div>
+
+        <h3 class="titoli2">Focus Servizio 1</h3>
+        <h5 class="Stitoli">offre molteplici macchinari</h5>
+
+        <div id="focus1">
+           <div class="fc1">
+            Il servizio di pesistica offerto da una palestra comprende una serie di attività e risorse dedicate a migliorare la forza, la resistenza muscolare e la composizione corporea. Tra i principali servizi ci sono:
+            -Area attrezzata con attrezzi professionali per il sollevamento pesi.
+            -Programmi personalizzati di allenamento in base agli obiettivi individuali.
+            -Supervisione da istruttori qualificati per garantire un allenamento sicuro ed efficace.
+            -Corsi di pesistica per approfondire tecniche specifiche.
+            -Servizi di riabilitazione e recupero per chi ha subito infortuni.
+            -Consulenza nutrizionale per ottimizzare i risultati dell'allenamento.
+            -Eventi e competizioni per stimolare la motivazione.
+            I benefici principali sono l'aumento della massa muscolare, il miglioramento della forza, della postura e della mobilità, nonché la prevenzione degli infortuni.
+            </div>
+           <div><img src="pesi.jpg" class="fc1"/></div>
+        </div>
+
+        <h3 class="titoli2">Focus Servizio 2</h3>
+        <h5 class="Stitoli">offre molteplice oggetistica oltre alle borrace</h5>
+
+        <div id="focus1">
+            <div><img src="borracia.jpg" class="fc1"/></div>
+           <div class="fc1">
+            Il servizio di vendita di oggettistica offerto da una palestra comprende una selezione di prodotti pensati per supportare gli allenamenti e il benessere degli utenti. Tra gli articoli disponibili, si trovano:
+            -Accessori per l’allenamento: tappetini, fasce, guanti, cinture per sollevamento pesi, e altre attrezzature utili per migliorare l’efficacia degli esercizi e prevenire gli infortuni.
+            -Integratori nutrizionali: proteine, aminoacidi, vitamine e integratori energetici per supportare la performance fisica, il recupero e la crescita muscolare.
+            -Borracce e shaker: per mantenere l’idratazione durante l’allenamento e facilitare il consumo di integratori in polvere.
+            Questi prodotti sono pensati per migliorare l’esperienza di allenamento, facilitare il raggiungimento degli obiettivi e promuovere uno stile di vita sano e attivo.
+            </div>
+        </div>
+
+        <div id="form1" >
+            <a name="Contatti"><h5 class="Stitoli2">RICHIEDI INFORMAZIONI, CONTATACI COME PREFERISCI</h5></a>
+            <button class="buttom">Contattaci</button>
+            <form id="form">
+                <h2>RICHIEDI PREVENTIVO</h2>
+                Nome:<input/>
+                Cognome:<input/>
+                Email:<input/>
+                Telefono:<input/>
+                Messagio:<input/>
+                Ho letto l'informativa privacy e do il mio consenso
+                al trattamento dei miei dati in merito alla mia richiesta commerciale.
+                <input type="checkbox">Consenso</input>
+                <button class="buttom">INVIA</button>
+            </form>           
+        </div>
+
+        <a name="Novita"><h1 class="titoli">RISORSE MARKETING</h1></a>
+
+        <div id="servizi">
+
+            
+            <div class="bloccoServizio">
+                <img src="pesi.jpg" alt="Pesi">
+                <h5>Novità</h5>
+                <a class="novita">squat rack</a>
+                <a class="novita">bumper plate</a>
+                <a class="novita">air bike</a>
+            </div>
+            <div class="bloccoServizio">
+                <img src="borracia.jpg" alt="Borracce">
+                <h5>Novità</h5>
+                <a class="novita">straps</a>
+                <a class="novita">shecker</a>
+                <a class="novita">polsini</a>
+            </div>
+            <div class="bloccoServizio">
+                <img src="snack.jpg" alt="Snack">
+                <h5>Novità</h5>
+                <a class="novita">Enervit Protein Deal Milk Choco & Hazelnut</a>
+                <a class="novita">Enervit Protein Keto Tavoletta Ciocciolato</a>
+                <a class="novita">Protein Snack Keto</a>
+            </div>
+        </div>
+        <div id="footer">
+            ©Designed by <a href="https://11marketing.it/">ELEVEN MARKETING - Consulenza Marketing Roma</a> <br>
+            di Castellana Elio, Via C. Casana, 301 (00121) Roma, P.IVA 11691061003, Mob.338 2802359, info@11marketing.it; <br>
+            <img src="vcss.png"/>
+            <img src="vcss.png"/>
+        </div>
+    </div>
+</body>
+</html>
